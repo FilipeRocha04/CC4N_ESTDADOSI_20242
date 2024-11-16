@@ -1,4 +1,4 @@
-#include <stdio.h> // Inclui a biblioteca padrão para entrada e saída
+#include <stdio.h> 
 
 // Função para reorganizar o heap
 void heapify(int arr[], int n, int i) {
