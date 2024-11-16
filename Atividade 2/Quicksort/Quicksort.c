@@ -1,4 +1,4 @@
-#include <stdio.h> // Inclui a biblioteca padrão para entrada e saída
+#include <stdio.h> 
 
 // Função de partição
 int partition(int arr[], int low, int high) {
