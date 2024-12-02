@@ -1,14 +1,15 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 
-// Estrutura de um nó da árvore
+
 typedef struct Node {
     int key;
     struct Node *left, *right;
     int height;
 } Node;
 
-// Função para criar um novo nó
+
 Node* createNode(int key) {
     Node* node = (Node*)malloc(sizeof(Node));
     node->key = key;
@@ -17,7 +18,7 @@ Node* createNode(int key) {
     return node;
 }
 
-// Funções auxiliares para AVL
+
 int getHeight(Node* node) {
     return node ? node->height : 0;
 }
@@ -50,7 +51,7 @@ Node* rotateLeft(Node* x) {
     return y;
 }
 
-// Função para inserir um nó na AVL
+
 Node* avlInsert(Node* root, int key) {
     if (root == NULL) return createNode(key);
 
@@ -80,7 +81,7 @@ Node* avlInsert(Node* root, int key) {
     return root;
 }
 
-// Função para imprimir a árvore em formato hierárquico
+
 void printTree(Node* root, int space) {
     if (root == NULL) return;
     space += 5;
