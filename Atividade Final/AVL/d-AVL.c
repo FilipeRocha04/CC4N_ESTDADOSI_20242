@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Estrutura de um nó da árvore
+
 typedef struct Node {
     int key;
     struct Node *left, *right;
     int height;
 } Node;
 
-// Função para criar um novo nó
+
 Node* createNode(int key) {
     Node* node = (Node*)malloc(sizeof(Node));
     node->key = key;
@@ -17,7 +17,6 @@ Node* createNode(int key) {
     return node;
 }
 
-// Funções auxiliares para AVL
 int getHeight(Node* node) {
     return node ? node->height : 0;
 }
@@ -50,7 +49,7 @@ Node* rotateLeft(Node* x) {
     return y;
 }
 
-// Função para inserir um nó na AVL
+
 Node* avlInsert(Node* root, int key) {
     if (root == NULL) return createNode(key);
 
@@ -80,14 +79,14 @@ Node* avlInsert(Node* root, int key) {
     return root;
 }
 
-// Função para encontrar o nó de menor valor
+
 Node* findMin(Node* root) {
     while (root && root->left != NULL)
         root = root->left;
     return root;
 }
 
-// Função para remover um nó da AVL
+
 Node* avlRemove(Node* root, int key) {
     if (root == NULL) return root;
 
@@ -130,7 +129,7 @@ Node* avlRemove(Node* root, int key) {
     return root;
 }
 
-// Função para imprimir a árvore em formato hierárquico
+
 void printTree(Node* root, int space) {
     if (root == NULL) return;
     space += 5;
@@ -147,7 +146,7 @@ int main() {
     int n = sizeof(initialValues) / sizeof(initialValues[0]);
     Node* root = NULL;
 
-    // Inserindo os valores iniciais
+  
     printf("=== Construção inicial da AVL ===\n");
     for (int i = 0; i < n; i++) {
         printf("\nInserindo %d na AVL:\n", initialValues[i]);
@@ -155,7 +154,7 @@ int main() {
         printTree(root, 0);
     }
 
-    // Removendo o nó 20
+
     printf("\n=== Removendo o nó 20 da AVL ===\n");
     root = avlRemove(root, 20);
     printTree(root, 0);
